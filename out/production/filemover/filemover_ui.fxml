@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.control.UIControl">
+   <center>
+      <VBox>
+         <children>
+            <Label text="File Name Format:" />
+            <HBox spacing="9.0">
+               <children>
+                  <ChoiceBox fx:id="formatType" prefWidth="150.0" value="Text_Number">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="Text_Number" />
+                           <String fx:value="Number_Text"/>
+                           <String fx:value="TextNumber" />
+                           <String fx:value="NumberText"/>
+                           <String fx:value="Number" />
+                        </FXCollections>
+                     </items>
+                  </ChoiceBox>
+                  <CheckBox fx:id="checkrt" mnemonicParsing="false" text="Include &quot;rt&quot; files" />
+                  <CheckBox fx:id="checksh" layoutX="165.0" layoutY="10.0" mnemonicParsing="false" text="Include &quot;sh&quot; files" />
+               </children>
+            </HBox>
+            <Label text="File Text Component:" />
+            <TextField fx:id="textField" promptText="prefix" text="image">
+               <tooltip>
+                  <Tooltip text="The common prefix. For example, image_001, image_002, and image_003 all have the prefix &quot;image&quot;." />
+               </tooltip>
+            </TextField>
+            <Label layoutX="10.0" layoutY="10.0" text="File numbers:" />
+            <TextArea fx:id="textArea" prefHeight="227.0" prefWidth="600.0" promptText="Paste file numbers here" BorderPane.alignment="CENTER">
+               <tooltip>
+                  <Tooltip text="Paste your file numbers here. They can be separated by commas or spaces." />
+               </tooltip>
+            </TextArea>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="27.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="14.0" layoutY="4.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="4.0" text="Source: " />
+                  <Label fx:id="sourceLabel" layoutX="67.0" layoutY="4.0" text="sourcefolder" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="sourceButton" mnemonicParsing="false" onAction="#pickSource" text="Select Folder">
+               <tooltip>
+                  <Tooltip text="Select the source folder containing your files" />
+               </tooltip>
+            </Button>
+            <Button fx:id="moveButton" mnemonicParsing="false" onAction="#openConfirmWindow" text="Copy Files">
+               <tooltip>
+                  <Tooltip text="Copy your files to a new sub-folder." />
+               </tooltip></Button>
+        </items>
+      </ToolBar>
+   </top>
+   <left>
+      <VBox prefHeight="326.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <VBox prefHeight="326.0" prefWidth="14.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

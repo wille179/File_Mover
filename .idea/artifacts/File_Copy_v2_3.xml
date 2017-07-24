@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="File Copy v2.3">
+    <output-path>$PROJECT_DIR$/out/artifacts/File_Copy_v2_3</output-path>
+    <root id="archive" name="File Copy v2.3.jar">
+      <element id="module-output" name="filemover" />
+    </root>
+  </artifact>
+</component>
